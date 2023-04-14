@@ -57,7 +57,7 @@ body, html, #root {
   nav {
     display: flex;
     justify-content: space-between;
-    max-height: 8vh;
+    min-height: 9vh;
     background: black;
   }
   

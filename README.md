@@ -14,9 +14,3 @@ npm install
 npm run dev will give you a link to the live server with the app running
 ```
 
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

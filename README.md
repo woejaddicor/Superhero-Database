@@ -8,6 +8,11 @@
 ```sh
 npm install
 ```
+## Start the app
+
+```sh
+npm run dev will give you a link to the live server with the app running
+```
 
 ## Show your support
 

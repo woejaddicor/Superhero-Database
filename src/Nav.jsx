@@ -16,7 +16,7 @@ function Nav() {
     <nav>
       <ul className="nav-links">
         <div className="button-div">
-        <NavLink onClick={handleRefresh} className="links" to="/">Home</NavLink>
+        <NavLink onClick={handleRefresh} className="links" to="/">Random Hero</NavLink>
         </div>
         <div className="button-div">
         <NavLink className="links" to="/superheroes">Search</NavLink>

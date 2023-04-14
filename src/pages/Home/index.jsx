@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   const [frontPage, setFrontPage] = useState({})
@@ -17,27 +18,27 @@ export default function Home() {
     fetchSuperheroes() 
   }, []) 
 
-  return (
-    <div>
-       {frontPage.name && (
-        <h1>{frontPage.name}</h1>
-      )}
-      {frontPage.appearance && (
-        <p>Race: {frontPage.appearance.race}</p>
-      )}
-      {frontPage.biography && (
-        <ul>
-            <li>Aliases: {frontPage.biography.aliases}</li>
-            <li>Alter Egos: {frontPage.biography.alterEgos}</li>
-            <li>First Appearance: {frontPage.biography.firstAppearance}</li>
-            <li>Publisher: {frontPage.biography.publisher}</li>
-            <li>Full Name: {frontPage.biography.fullName}</li>
-        </ul>
-      )}
-      {frontPage.images && (
-        <img src={frontPage.images.md}/>
-      )}
-    </div>
-
-  )
-}
+    return (
+      <div className='home-page'>
+        {frontPage.images && frontPage.id && (
+          <div className='image-container'>
+            <img src={frontPage.images.md} alt={frontPage.name} />
+          </div>
+        )}
+        <div className='text-container'>
+          {frontPage.name && <h1>{frontPage.name}</h1>}
+          {frontPage.appearance && <p>Race: {frontPage.appearance.race}</p>}
+          {frontPage.biography && (
+            <ul>
+              <li>Aliases: {frontPage.biography.aliases}</li>
+              <li>Alter Egos: {frontPage.biography.alterEgos}</li>
+              <li>First Appearance: {frontPage.biography.firstAppearance}</li>
+              <li>Publisher: {frontPage.biography.publisher}</li>
+              <li>Full Name: {frontPage.biography.fullName}</li>
+            </ul>
+          )}
+        </div>
+      </div>
+    );
+  }
+  

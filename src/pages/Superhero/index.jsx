@@ -1,26 +1,28 @@
 import React, {useState, useEffect } from 'react'
-import { useSuperheroes } from '../../contexts'
 import { useParams } from 'react-router-dom'
 
 export default function Superhero() {
   const {id} = useParams()
-  const {superheroContext} = useSuperheroes()
   const [superhero, setSuperhero] = useState({})
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     setLoading(true)
-    const selectedHero = superheroContext.find((hero) => hero.id == id);
-    if (selectedHero) {
-      setSuperhero(selectedHero);
+    const findHero = async () => {
+      try {
+        const response = await fetch(`https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/${id}.json`)
+        const heroData = await response.json()
+        setSuperhero(heroData)
+      } catch (err) {
+        console.log(err)
+      }
     }
+    findHero()
     setLoading(false)
-  }, [id, superheroContext])
-
-  console.log(superhero)
+  }, [id])
 
   return (
-    <div>
+    <div className='superhero-page'>
       {superhero.name && (
         <h1>{superhero.name}</h1>
       )}

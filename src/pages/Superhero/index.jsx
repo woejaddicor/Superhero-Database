@@ -23,37 +23,43 @@ export default function Superhero() {
 
   return (
     <div className='superhero-page'>
-      {superhero.name && (
-        <h1>{superhero.name}</h1>
-      )}
-      {superhero.appearance && (
-        <p>Race: {superhero.appearance.race}</p>
-      )}
-      {superhero.biography && (
-        <ul>
-            <li>Aliases: {superhero.biography.aliases}</li>
-            <li>Alter Egos: {superhero.biography.alterEgos}</li>
-            <li>First Appearance: {superhero.biography.firstAppearance}</li>
-            <li>Publisher: {superhero.biography.publisher}</li>
-            <li>Full Name: {superhero.biography.fullName}</li>
-        </ul>
-      )}
-      {superhero.images && (
-        <img src={superhero.images.md}/>
-      )}
-      {superhero.powerstats && (
-        <ul>
-            <li>Combat: {superhero.powerstats.combat}</li>
-            <li>Durability: {superhero.powerstats.durability}</li>
-            <li>Intelligence: {superhero.powerstats.intelligence}</li>
-            <li>Power: {superhero.powerstats.power}</li>
-            <li>Speed: {superhero.powerstats.speed}</li>
-            <li>Strength: {superhero.powerstats.strength}</li>
-        </ul>
-      )}
-      {superhero.work && (
-        <p>Occupation: {superhero.work.occupation}</p>
-      )}
-    </div>
+        {superhero.images && (
+          <div className="image-container">
+            <img src={superhero.images.lg}/>
+          </div>
+        )}
+        <div className="text-container">
+          {superhero.name && (
+            <h1>{superhero.name}</h1>
+          )}
+          {superhero.appearance && (
+            <p>Race: {superhero.appearance.race}</p>
+          )}
+          {superhero.biography && (
+            <ul>
+                <li>Aliases: {superhero.biography.aliases}</li>
+                <br></br>
+                <li>Alter Egos: {superhero.biography.alterEgos}</li>
+                <br></br>
+                <li>First Appearance: {superhero.biography.firstAppearance}</li>
+                <br></br>
+                <li>Publisher: {superhero.biography.publisher}</li>
+                <br></br>
+                <li>Full Name: {superhero.biography.fullName}</li>
+            </ul>
+          )}
+          {superhero.powerstats && (
+            <ul>
+                <li>Combat: {superhero.powerstats.combat}</li>
+                <li>Durability: {superhero.powerstats.durability}</li>
+                <li>Intelligence: {superhero.powerstats.intelligence}</li>
+                <li>Power: {superhero.powerstats.power}</li>
+                <li>Speed: {superhero.powerstats.speed}</li>
+                <li>Strength: {superhero.powerstats.strength}</li>
+            </ul>
+          )}
+        </div>
+      </div>
   )
+  
 }

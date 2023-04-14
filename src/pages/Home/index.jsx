@@ -22,21 +22,11 @@ export default function Home() {
       <div className='home-page'>
         {frontPage.images && frontPage.id && (
           <div className='image-container'>
-            <img src={frontPage.images.md} alt={frontPage.name} />
+            <img src={frontPage.images.lg} alt={frontPage.name} />
           </div>
         )}
         <div className='text-container'>
-          {frontPage.name && <h1>{frontPage.name}</h1>}
-          {frontPage.appearance && <p>Race: {frontPage.appearance.race}</p>}
-          {frontPage.biography && (
-            <ul>
-              <li>Aliases: {frontPage.biography.aliases}</li>
-              <li>Alter Egos: {frontPage.biography.alterEgos}</li>
-              <li>First Appearance: {frontPage.biography.firstAppearance}</li>
-              <li>Publisher: {frontPage.biography.publisher}</li>
-              <li>Full Name: {frontPage.biography.fullName}</li>
-            </ul>
-          )}
+          {frontPage.name && <Link style={{color: "white", textDecoration: "none"}} to={`/superheroes/${frontPage.id}`}><h1 className='home-link'>{frontPage.name}</h1></Link>}
         </div>
       </div>
     );

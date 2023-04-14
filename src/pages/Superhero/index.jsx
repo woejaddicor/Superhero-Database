@@ -25,7 +25,7 @@ export default function Superhero() {
         <h1>{superhero.name}</h1>
       )}
       {superhero.appearance && (
-        <p>{superhero.appearance.race}</p>
+        <p>Race: {superhero.appearance.race}</p>
       )}
       {superhero.biography && (
         <ul>

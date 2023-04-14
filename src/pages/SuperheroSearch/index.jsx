@@ -33,19 +33,22 @@ export default function SuperheroSearch() {
   }, [inputText, superheroContext])
 
   return (
-    <>
-      <h1>Superhero list</h1>
-      <label>Search:<input type="text" value={inputText} onChange={updateTextFilter} /></label>
-      <div className="grid-container">
+    <div class='search-page'>
+      <header class="header">
+        <label class='search-label'><input class='hero-search' type="text" value={inputText} onChange={updateTextFilter} placeholder='Search the database'/></label>
+        </header>
+      <div class="grid-container">
         {filteredHeroes.map((superhero) => {
           return (
-            <div className='grid-item' key={superhero.id}>
-              <h2>{superhero.name}</h2>
-              <Link to={`/superheroes/${superhero.id}`}><img src={superhero.images.sm}/></Link>
+            <div class='grid-item' key={superhero.id}>
+              <img class='hero-thumbnail' src={superhero.images.sm}/>
+              <div class='overlay'>
+                <Link style={{color: '#566E3D', fontWeight: 'bold', textDecoration: 'none'}} to={`/superheroes/${superhero.id}`}><h2>{superhero.name}</h2></Link>
+              </div>
             </div>
           )
         })}
-      </div>    
-    </>
+      </div>
+    </div>
   )
 }

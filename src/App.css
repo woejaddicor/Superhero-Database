@@ -1,21 +1,116 @@
+* {
+  text-align: center;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 10px;
   }
   
   .grid-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-    background-color: #f1f1f1;
-    border-radius: 5px;
+    gap: 0px;
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
+
+.grid-item:hover {
+  transform: scale(1.03);
+  border-radius: 10px;
+}
   
   .grid-item img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: #d9f6cd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+  }
+
+  .overlay:hover {
+    opacity: 80%;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    max-height: 8vh;
+    background: black;
+  }
+  
+  .nav-links {
+    min-width: 20%;
+    max-width: 25%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-family: monospace;
+    margin-left: auto;
+  }
+
+
+  .button-div {
+    background-color: black;
+    padding: 5px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 20px;
+    width: fit-content;
+  }
+  
+  .button-div:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  .links {
+    color: white;
+    text-decoration: none !important;
+  }
+
+  .hero-search {
+    background-color: rgb(238, 238, 238);
+    margin: 15px;
+    min-width: 30%;
+    height: 2rem;
+    border-radius: 5px;
+    border: 5px inset rgb(37, 36, 36);
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: capitalize;
+  }
+
+  .search-page {
+    background-color: #000000;
+  }
+
+  .header {
+    position: fixed;
+    width: 0;
+    top: 0;
+    z-index: 999;
   }

@@ -1,16 +1,25 @@
-import React from "react"
-import { NavLink, Outlet } from "react-router-dom"
+import React, {useEffect} from "react"
+import { NavLink, Outlet, useLocation } from "react-router-dom"
 
 function Nav() {
+  const location = useLocation()
+  const handleRefresh = () => {
+    if (location.pathname === "/") {
+    window.location.reload()
+  } else {
+    window.location.assign("/")
+  }
+}
+
   return (
     <>
     <nav>
       <ul className="nav-links">
         <div className="button-div">
-        <NavLink className="links" to="/">Home</NavLink>
+        <NavLink onClick={handleRefresh} className="links" to="/">Home</NavLink>
         </div>
         <div className="button-div">
-        <NavLink className="links" to="/superheroes">Superhero Search</NavLink>
+        <NavLink className="links" to="/superheroes">Search</NavLink>
         </div>
       </ul>
     </nav>

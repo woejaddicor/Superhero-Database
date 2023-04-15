@@ -30,7 +30,7 @@ export default function Superhero() {
         )}
         <div className="text-container">
           {superhero.name && (
-            <h1 className='home-link'>{superhero.name}</h1>
+            <h1>{superhero.name}</h1>
           )}
           {superhero.appearance && (
             <p>Race: {superhero.appearance.race}</p>

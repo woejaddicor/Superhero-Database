@@ -15,6 +15,7 @@ body, html, #root {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 10px;
+    
   }
   
   .grid-item {
@@ -25,6 +26,8 @@ body, html, #root {
     position: relative;
     width: 100%;
     height: 100%;
+    max-width: 300px;
+
   }
 
 .grid-item:hover {
@@ -181,6 +184,10 @@ p {
   .superhero-page {
     grid-template-columns: 1fr;
   }
+}
+
+.home-link {
+  max-width: 90%;
 }
 
 .home-link:hover {

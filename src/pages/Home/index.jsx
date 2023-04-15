@@ -12,7 +12,7 @@ export default function Home() {
         const superheroData = await response.json()
         setFrontPage(superheroData)
       } catch (err) {
-        console.log(err)
+          console.log(err)
       }
     }
     fetchSuperheroes() 
@@ -26,7 +26,7 @@ export default function Home() {
           </div>
         )}
         <div className='text-container'>
-          {frontPage.name && <Link style={{color: "white", textDecoration: "none"}} to={`/superheroes/${frontPage.id}`}><h1 className='home-link'>{frontPage.name}</h1></Link>}
+          {frontPage.name && <Link style={{color: "white", textDecoration: "none", wordWrap: "break-word"}} to={`/superheroes/${frontPage.id}`}><h1 className='home-link'>{frontPage.name}</h1></Link>}
         </div>
       </div>
     );

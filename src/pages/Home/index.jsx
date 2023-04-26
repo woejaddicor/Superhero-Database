@@ -3,16 +3,19 @@ import { Link } from 'react-router-dom'
 
 export default function Home() {
   const [frontPage, setFrontPage] = useState({})
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const fetchSuperheroes = async () => {
       try {
+        setLoading(true)
         const randomNumber = Math.floor(Math.random() * 564); 
         const response = await fetch(`https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/${randomNumber}.json`)
         const superheroData = await response.json()
         setFrontPage(superheroData)
+        setLoading(false)
       } catch (err) {
-          console.log('Error fetching superhero data:', err)
+          console.log(err)
       }
     }
     fetchSuperheroes() 
